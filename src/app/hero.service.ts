@@ -3,6 +3,7 @@ import { from } from 'rxjs';
 import { Ihero} from './Ihero';
 import { listheroes} from './ListHeroes';
 import { Observable, of} from 'rxjs';
+import {MessagesService} from './messages.service';
 
 // Lorsque vous fournissez le service au niveau racine, Angular crée une instance unique et 
 // partagée de HeroService et l'injecte dans toute classe qui le demande. L'enregistrement du fournisseur
@@ -13,9 +14,10 @@ import { Observable, of} from 'rxjs';
 })
 export class HeroService {
 
-  constructor() { }
+  constructor(private messageService: MessagesService) { }
 
   getHero(): Observable<Ihero[]>{
+    this.messageService.add("La liste de tout les heros trouve!...");
     return of(listheroes);
   }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { from } from 'rxjs';
+import { MessagesService } from '../messages.service';
 
 import {Ihero} from '../Ihero';
 
@@ -10,7 +10,7 @@ import {Ihero} from '../Ihero';
 })
 export class HeroDetailComponent implements OnInit {
 
-  constructor() { }
+  constructor(private serviceMessage: MessagesService) { }
 
   ngOnInit(): void {
   }
@@ -18,6 +18,8 @@ export class HeroDetailComponent implements OnInit {
 
   close(): void{
     this.hero=null;
+    this.serviceMessage.clear();
+    this.serviceMessage.add("Liste de tout les heros trouvee!...")
   }
 
 }
