@@ -1,0 +1,15 @@
+<ul class="list-group list-group-flush">
+    <li class="list-group-item active">Liste des heros</li>
+    <!-- Ceci est un exemple de la syntaxe de liaison d'événement d'Angular (click)="onSelection(hero) . -->
+    <li class="list-group-item" *ngFor="let hero of heroes" (click)="onSelection(hero)" [class.selected]="hero === selectedHero">
+        <span class="badge">{{hero.id}}</span>{{hero.nom}}
+    </li>
+    <!-- 
+        La hero propriété est une propriété Input
+        [hero]="selectedHero"est une liaison de propriété angulaire .
+        Il s'agit d'une liaison de données unidirectionnelle de la selectedHeropropriété du 
+        HeroesComponentà la heropropriété de l'élément cible, qui correspond à la heropropriété
+        du HeroDetailComponent.
+    -->
+</ul>
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>

@@ -1,0 +1,13 @@
+<!-- Le composant ne doit afficher les détails du héros sélectionné que s'il selectedHeroexiste. -->
+<div *ngIf="hero">
+    <h2>{{hero.nom | uppercase}} Details</h2>
+    <div><span>id: </span>{{hero.id}}</div>
+    <div>
+        <label>name:
+            <!-- Pour automatiser ce flux de données, configurez une liaison de données bidirectionnelle
+                    entre l' <input>élément de formulaire et la hero.namepropriété. -->
+            <input [(ngModel)]="hero.nom" placeholder="nom"/>
+        </label>
+    </div>
+    <button type="button" class="btn btn-outline-primary btn-sm" (click)="close()">Close</button>
+</div>

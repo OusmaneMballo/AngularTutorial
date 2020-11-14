@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "my-ap-angular"
+    }
+  },
+  "defaultProject": "my-ap-angular",
+  "cli": {
+    "analytics": "166a7425-faca-4d8a-a23f-743983569343"
+  }
 }
